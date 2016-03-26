@@ -14,10 +14,11 @@
 		$nbTweet = $_POST['nbTweet'];
 		
 		if(empty($nbTweet)){
-			$nbTweet = 15;
+			$nbTweet = 10;
 		}
 		
-		$tweets = $twitter->get("https://api.twitter.com/1.1/search/tweets.json?q=".$keywords."&result_type=recent&count=".$nbTweet);
+		$tweets = $twitter->get("https://api.twitter.com/1.1/search/tweets.json?q=".$keywords."&result_type=mixed&count=".$nbTweet);
+		
 		if(!empty($nbTweet)){
 			$countTweet = count($tweets->statuses);
 		}
@@ -76,12 +77,12 @@
 			   		<div class="col-sm-6">
 			   			<div class="panel panel-default">
 			   				<div class="panel-heading">
-			   					<h3>Stats <button id="statsButton" class="btn btn-primary" type="button">stats</button></h3>
+			   					<h3>Stats </h3>
 			   				</div>
 			   				<div class="stats">
 					   			<div class="progress">
-								  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-								    40% <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+								  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+								    70% <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
 								  </div>
 								</div>
 								<div class="progress">
@@ -90,11 +91,13 @@
 								  </div>
 								</div>
 								<div class="progress">
-		  							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-		    						80% <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+		  							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+		    						10% <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
 		  							</div>
 								</div>
-
+							</div>
+							<div class="divButton" >
+								<button id="statsButton" class="btn btn-primary" type="button">stats</button><br><br>
 							</div>		
 						</div>	
 			   		</div>
